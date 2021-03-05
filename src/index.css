@@ -28,16 +28,14 @@
 .btn {
     border-radius: 7px;
     background-color: white;
-    width: 47px;
-    height: 47px;
-    margin-right: 15px;
-    margin-bottom: 20px;
-    font-size: 5px;
+    margin-bottom: 7px;
+    margin-left: 15px;
+
 }
 
-.btn-add {
-    border-radius: 7px;
-    padding: 5px 15px;
+.check {
+    zoom: 1.5;
+    margin-left: 15px;
 }
 
 .user-email{

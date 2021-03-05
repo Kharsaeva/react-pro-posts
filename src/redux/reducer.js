@@ -18,6 +18,43 @@ export const reducer = (state = initialState, action) => {
                 posts: action.payload
             };
 
+        case 'posts/check/start':
+            return {
+                ...state,
+                posts: state.posts.map(post => {
+                    if (post.id === action.payload) {
+                        return {
+                            ...post,
+                            checking: true,
+                        }
+                    }
+
+                    return post;
+                })
+            };
+
+        case 'posts/check/success':
+            return {
+                ...state,
+                posts: state.posts.map((post) => {
+                    if (post.id === action.payload) {
+                        return {
+                            ...post,
+                            completed: !post.completed,
+                            checking: false,
+                        }
+                    }
+
+                    return post;
+                })
+            };
+
+        case 'posts/remove/success':
+            return {
+                ...state,
+                posts: state.posts.filter((item) => item.id !== action.payload)
+            };
+
         case 'users/load/start':
             return {
                 ...state,
@@ -29,12 +66,6 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 users: action.payload,
                 usersLoading: false,
-            };
-
-        case 'posts/remove/success':
-            return {
-                ...state,
-                posts: state.posts.filter((item) => item.id !== action.payload)
             };
 
         default:

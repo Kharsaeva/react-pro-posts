@@ -29,6 +29,29 @@ export const removeOnePost = (id) => {
     }
 };
 
+export const checkPost =(id, completed) => {
+    return function (dispatch) {
+        dispatch({
+            type: 'posts/check/start',
+            payload: id,
+        });
+        fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ completed: !completed}),
+            headers: {
+                "Content-type": 'application/json'
+            }
+        })
+            .then((response) => response.json())
+            .then(() => {
+                dispatch({
+                    type: 'posts/check/success',
+                    payload: id
+                })
+            })
+    }
+};
+
 export const loadUsers = (id) => {
     return (dispatch) => {
         dispatch({
