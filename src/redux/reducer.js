@@ -5,7 +5,7 @@ const initialState = {
     usersLoading: false,
 };
 
-export default (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'posts/load/start':
             return {
@@ -41,3 +41,5 @@ export default (state = initialState, action) => {
             return state;
     }
 }
+
+export default reducer;
