@@ -3,20 +3,28 @@
     width: 800px;
     font-family: "Cambria", sans-serif;
 }
+
 .header {
     font-size: 55px;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .post {
     border-bottom: 1px solid lightgray;
-    margin-bottom: 15px;
+    padding: 10px;
     font-size: 18px;
 }
+
+.post:hover {
+    background-color: aliceblue;
+}
+
 .post-title {
     font-size: 20px;
     font-weight: bold;
 }
+
 .btn {
     border-radius: 7px;
     background-color: white;
@@ -26,10 +34,12 @@
     margin-bottom: 20px;
     font-size: 5px;
 }
+
 .btn-add {
     border-radius: 7px;
     padding: 5px 15px;
 }
+
 .user-email{
     color: gray;
     font-weight: normal;

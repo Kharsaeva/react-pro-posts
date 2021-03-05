@@ -27,7 +27,7 @@ function Posts(props) {
 
             <div className="posts">
                 {posts.map(post => {
-                    return <Post post={post} key={posts.id} users={users}/>
+                    return <Post post={post} key={post.id} users={users}/>
                 })}
             </div>
 
