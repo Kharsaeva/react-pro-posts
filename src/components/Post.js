@@ -11,12 +11,12 @@ function Post(props) {
         dispatch(removeOnePost(id))
     };
 
-    const handleCheck = (id, completed) => {
-        dispatch(checkPost(id, completed))
+    const handleCheck = (id, favorite) => {
+        dispatch(checkPost(id, favorite));
     };
 
     return (
-        <div className="post">
+        <div className={`post ${props.post.favorite ? 'selected' : ''}`}>
             <p className="post-title">
                 "{props.post.title}"
             </p>
@@ -28,10 +28,9 @@ function Post(props) {
             </p>
             <input
                 type="checkbox"
-                id="colorbox"
                 className="check"
-                checked={props.post.completed}
-                onChange={() => handleCheck(props.post.id, props.post.completed)}
+                checked={props.post.favorite}
+                onChange={() => handleCheck(props.post.id, props.post.favorite)}
             />
             <div
                 className="btn"

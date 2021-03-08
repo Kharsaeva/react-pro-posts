@@ -15,10 +15,7 @@
     border-bottom: 1px solid lightgray;
     padding: 10px;
     font-size: 18px;
-}
-
-.post:hover {
-    background-color: aliceblue;
+    text-align: center;
 }
 
 .post-title {
@@ -30,15 +27,20 @@
     border-radius: 7px;
     background-color: white;
     margin-bottom: 7px;
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .check {
     zoom: 1.5;
-    margin-left: 15px;
+    margin-right: 10px;
 }
 
 .user-email{
     color: gray;
     font-weight: normal;
 }
+
+.selected {
+    background-color: aliceblue;
+}
+

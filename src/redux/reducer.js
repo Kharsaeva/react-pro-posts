@@ -3,6 +3,7 @@ const initialState = {
     loading: false,
     users: [],
     usersLoading: false,
+    favorite: false,
 };
 
 export const reducer = (state = initialState, action) => {
@@ -40,7 +41,7 @@ export const reducer = (state = initialState, action) => {
                     if (post.id === action.payload) {
                         return {
                             ...post,
-                            completed: !post.completed,
+                            favorite: !post.favorite,
                             checking: false,
                         }
                     }

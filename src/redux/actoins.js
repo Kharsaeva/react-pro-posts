@@ -28,7 +28,7 @@ export const removeOnePost = (id) => {
     }
 };
 
-export const checkPost =(id, completed) => {
+export const checkPost = (id, favorite) => {
     return function (dispatch) {
         dispatch({
             type: 'posts/check/start',
@@ -36,7 +36,7 @@ export const checkPost =(id, completed) => {
         });
         fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
             method: 'PATCH',
-            body: JSON.stringify({ completed: !completed}),
+            body: JSON.stringify({ favorite: !favorite }),
             headers: {
                 "Content-type": 'application/json'
             }
