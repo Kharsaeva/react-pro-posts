@@ -10,25 +10,19 @@ function Posts(props) {
     const usersLoading = useSelector(state => state.usersLoading);
     const dispatch = useDispatch();
 
-    useEffect((id) => {
+    useEffect(() => {
         dispatch(loadPosts());
-        dispatch(loadUsers(id));
+        dispatch(loadUsers());
     }, []);
 
-    if (loading || usersLoading) {
-        return (
-            <div>
-                Please wait...
-            </div>
-        );
-    }
-
     return (
-        <div className="posts">
-            {posts.map(post => {
-                return <Post post={post} key={post.id} users={users}/>
-            })}
-        </div>
+        (loading || usersLoading) ? 'Please wait...' : (
+            <div className="posts">
+                {posts.map(post => {
+                    return <Post post={post} key={post.id} users={users}/>
+                })}
+            </div>
+        )
     );
 }
 

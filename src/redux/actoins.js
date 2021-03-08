@@ -15,7 +15,6 @@ export const loadPosts = () => {
 
 export const removeOnePost = (id) => {
     return (dispatch) => {
-
         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
                 method: 'DELETE',
             })
@@ -52,7 +51,7 @@ export const checkPost =(id, completed) => {
     }
 };
 
-export const loadUsers = (id) => {
+export const loadUsers = () => {
     return (dispatch) => {
         dispatch({
             type: 'users/load/start',

@@ -20,21 +20,24 @@ function Post(props) {
             <p className="post-title">
                 "{props.post.title}"
             </p>
-            <span className="user-email">user.email</span>
+            <p className="user-email">
+                user.email
+            </p>
             <p className="post-body">
                 {props.post.body}
             </p>
             <input
                 type="checkbox"
+                id="colorbox"
                 className="check"
                 checked={props.post.completed}
                 onChange={() => handleCheck(props.post.id, props.post.completed)}
             />
-            <button
+            <div
                 className="btn"
                 onClick={() => handleDelete(props.post.id)}>
                 ❌
-            </button>
+            </div>
         </div>
     );
 }
