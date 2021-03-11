@@ -16,7 +16,9 @@ export const reducer = (state = initialState, action) => {
 
         case 'posts/load/success':
             return {
-                posts: action.payload
+                ...state,
+                posts: action.payload,
+                loading: false,
             };
 
         case 'posts/check/start':

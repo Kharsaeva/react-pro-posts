@@ -5,7 +5,7 @@ import {checkPost, removeOnePost} from "../redux/actoins";
 function Post(props) {
     const dispatch = useDispatch();
 
-    //const user = props.users.find(item => item.id === props.post.userId);
+    const user = props.users.find(item => item.id === props.post.userId);
 
     const handleDelete = (id) => {
         dispatch(removeOnePost(id))
@@ -21,7 +21,7 @@ function Post(props) {
                 "{props.post.title}"
             </p>
             <p className="user-email">
-                user.email
+                {user.email}
             </p>
             <p className="post-body">
                 {props.post.body}
